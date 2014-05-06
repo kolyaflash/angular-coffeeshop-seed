@@ -1,0 +1,52 @@
+<form name="addOrderForm" novalidate ng-submit="submitForm()">
+    <fieldset>
+        <legend>Create new order</legend>
+        <p>
+            <label for="idCustomerName">Customer name:</label>
+            <input type="text" name="customerName" id="idCustomerName" ng-model="newOrder.customerName" required />
+            <span ng-hide="!newOrder.customerName">
+                Hi, {{ newOrder.customerName }}
+            </span>
+        </p>
+        <p>
+            <label for="idBeverages">Select beverage:</label>
+            <select id="idBeverages" name="beverageType" ng-model="newOrder.beverageType" ng-options="o.name for o in menu.beverages" required></select>
+        </p>
+
+        <p>
+            Pay total: <span ng-bind="payTotal() | currency"></span>
+        </p>
+        <p>
+            <input type="submit" value="Create" ng-disabled="addOrderForm.$invalid" />
+        </p>
+    </fieldset>
+</form>
+
+<div class="orders-list">
+    <h4>Previous orders:</h4>
+
+    <div ng-if="orders.length > 0">
+
+        <table class="table">
+            <tr ng-repeat="order in orders | orderBy:'id':true">
+                <td>
+                    Order #{{ order.id }}
+                </td>
+                <td>
+                    by <b>{{ order.customerName }}</b>
+                </td>
+                <td>
+                    at {{ order.created_date | date:'short' }}
+                </td>
+                <td align="right">
+                    {{ order.totalPrice | currency }}
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div ng-show="orders.length === 0">
+        <h3><i>No orders to show</i></h3>
+    </div>
+</div>

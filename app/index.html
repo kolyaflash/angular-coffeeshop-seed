@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+<head>
+    <meta charset="utf-8">
+    <title>My coffee house app</title>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <h1>
+                <a href="#" class="ng-cloak">{{ settings.PROJECT_NAME }}</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+
+    <footer id="footer">
+        <div>App version: v<span app-version></span></div>
+    </footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.2.16/angular-route.min.js"></script>
+    <script src="js/indexeddb.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+</body>
+</html>

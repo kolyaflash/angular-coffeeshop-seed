@@ -1,0 +1,51 @@
+/* app css stylesheet */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.ng-cloak {
+  display: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table, .table td {
+  border: 1px solid #ccc;
+}
+
+.table td {
+  padding: 5px 10px;
+}
+
+#header {
+  margin: 0;
+  padding: 0;
+  background: #111;
+}
+
+#header h1 {
+  padding: 5px;
+  margin-top: 0;
+}
+
+#header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
